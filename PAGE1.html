@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-COMLOAN Kenya</title>
+  <style>
+    body {
+
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+    }
+    h {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo {
+      color: #f6a700;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .menu {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .container {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .main-title {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    .purple { background-color: #7e57c2; }
+    .orange { background-color: #ffa726; }
+    .red { background-color: #ef5350; }
+    h2 {
+      display: inline;
+      font-size: 1.2rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    li {
+      margin-bottom: 0.3rem;
+    }
+    .apply-btn {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto 0;
+      padding: 0.75rem 1.5rem;
+      background-color: #ffa726;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    .apply-btn:hover {
+      background-color: #fb8c00;
+    }
+  </style>
+</head>
+<body>
+
+  
+<header>
+  <div class="logo">E-COMLOAN</div>
+  <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+</header>
+
+<div class="menu-panel" id="menuPanel">
+  <ul>
+    <li><a href="#">Home</a></li>
+     <li><a href="#">Apply</a></li>
+    <li> <a href="#">About us</a></li>
+     <li><a href="#">Contact Us</a></li>
+  </ul>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menuPanel');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Optional: Hide menu if clicked outside
+  window.addEventListener('click', function(e) {
+    const menu = document.getElementById('menuPanel');
+    const icon = document.querySelector('.menu-icon');
+    if (!menu.contains(e.target) && !icon.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
+  <div class="container">
+    <div class="main-title">
+      E-COMLOAN is a Kenyan digital loan company for unbanked and underbanked.
+    </div>
+
+    <section>
+      <div class="icon purple"></div>
+      <h2>Unsecured Loans</h2>
+      <ul> 
+        <li>National ID or Passport</li>
+        <li>No Collateral</li>
+        <li>No CRB Review</li>
+        <li>Loan Insurance</li>
+        <li>M-PESA Number</li>
+      </ul>
+
+
+
+    </section>
+
+    <section>
+      <div class="icon orange"></div>
+      <h2>Business Loans</h2>
+      <ul>
+        <li>100% Vehicle ownership</li>
+        <li>Original Logbook</li>
+        <li>Vehicle Comprehensive Insurance</li>
+        <li>National ID or Passport</li>
+        <li>Proof of Income</li>
+      </ul>
+    </section>
+    <img src="https://media.istockphoto.com/id/121693992/photo/hand-holding-kenyan-currency-isolated-on-white.webp?a=1&b=1&s=612x612&w=0&k=20&c=JM4iXR-xmDzVHpu13gux9iz58QmSEdHX2mqn-SR-uRc=">
+
+    <section>
+      <div class="icon red"></div>
+      <h2>Salary Loans</h2>
+      <ul>
+        <li>Pay Slip and Bank Statement</li>
+        <li>Employment Contract</li>
+        <li>National ID or Passport</li>
+        <li>Bank Account</li>
+        <li>Credit Score Check (CRB)</li>
+      </ul>
+    </section>
+
+    <a href="PAGE2.html" class="apply-btn">Apply Now</a>
+  </div>
+
+</body>
+</html>
+</div><footer>
+  &copy; 2024 E-comLoan LTD
+</footer><script>

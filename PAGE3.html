@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Approval - E-comLoan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 1rem 1.5rem;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      color: #f6a700;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .message {
+      padding: 2rem 1rem;
+      color: #2e7d32;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+    .button {
+      background-color: #f6a700;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">E-COMLOAN</div>
+  <div class="menu">&#9776;</div>
+</header>
+
+<div class="message">
+  <p><strong>CONGRATULATIONS!</strong> <span id="userName">Customer</span>. 
+  You have qualified for a <span class="highlight">Loan of Ksh. 9000</span> 
+  to your <span class="highlight">Phone Number</span> 
+  <span class="highlight" id="phoneNumber">.</span>.</p>
+
+  <p>Your loan payment period is 3 months with a low 
+  <span class="highlight">Interest rate of 1.8%</span> and an 
+  <span class="highlight">Excise duty of Ksh. 162</span>.</p>
+
+  <p>Terms and Conditions Apply.</p>
+
+  <a href="PAGE4.html" class="button">Get Now</a>
+</div>
+
+<footer>
+  &copy; 2024 E-comLoan LTD
+</footer>
+
+<script>
+  const storedName = localStorage.getItem("fullName");
+  const storedPhone = localStorage.getItem("phoneNumber");
+
+  const namePlaceholder = document.getElementById("userName");
+  const phonePlaceholder = document.getElementById("phoneNumber");
+
+  if (storedName && storedName.trim() !== "") {
+    namePlaceholder.textContent = storedName;
+  }
+
+  if (storedPhone && storedPhone.trim() !== "") {
+    phonePlaceholder.textContent = storedPhone;
+  }
+</script>
+
+</body>
+</html>
+<footer><section style="padding: 2rem; background-color: #f9f9f9; font-family: Arial, sans-serif;">
+  <h2 style="color: #333;">Contact Us</h2>
+
+  <p><strong>Email:</strong> 
+    <a href="mailto.cheruiyotdesmond4@gmail.com">info@ecomloan.co.ke</a>
+  </p>
+
+  <p><strong>Phone 1:</strong> 
+    <a href="tel:+254702428513">+254 712 345 678</a>
+  </p>
+
+  <p><strong>Phone 2:</strong> 
+    <a href="tel:+254702428513">+254 713 426 758 </a>
+  </p>
+
+  <div style="margin-top: 1rem;">
+    <strong>Follow us:</strong><br><br>
+
+    <a href= "https://www.linkedin.com/in/desmond-cheruiyot-9b5875289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="https://www.linkedin.com/company/E-comloan"style="margin-right: 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+    </a>
+
+    <a href="https://www.facebook.com/share/17rCrg9dyV/" target="https://www.facebook.com/ecomloan" style="margin-right: 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="24" height="24">
+    </a>
+
+    <a href="https://www.instagram.com/megaloan" target="-blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" height="24">
+    </a>
+  </div>
+</section></footer>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Application - E-comLoan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      color: #f6a700;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    input:focus, select:focus {
+      border-color: #f6a700;
+      outline: none;
+      background-color: #fff;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #43a047;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">E-COMLOAN</div>
+    <div class="menu">&#9776;</div>
+  </header>
+
+  <div class="container">
+    <h2>Personal Details</h2>
+    <form onsubmit="return false">
+      <label for="firstName">First Name *</label>
+      <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+
+      <label for="middleName">Middle Name</label>
+      <input type="text" id="middleName" name="middleName" placeholder="Enter your middle name">
+
+      <label for="lastName">Last Name *</label>
+      <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+
+      <label for="phoneNumber">Phone Number *</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <label for="idNumber">ID Number *</label>
+      <input type="text" id="idNumber" name="idNumber" placeholder="Enter your ID number" required>
+
+      <label for="residence">Residence *</label>
+      <input type="text" id="residence" name="residence" placeholder="Enter your residence" required>
+
+      <label for="loanType">Loan Type *</label>
+      <select id="loanType" name="loanType" required>
+        <option value="">Select...</option>
+        <option value="unsecured">Unsecured Loan</option>
+        <option value="business">Business Loan</option>
+        <option value="salary">Salary Loan</option>
+      </select>
+
+     <a href="PAGE3.html" class="proceed-btn" onclick="return validateFormBeforeProceeding(event)">Proceed</a>
+
+<style>
+  .proceed-btn {
+    display: block;
+    width: 100%;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  .proceed-btn:hover {
+    background-color: #43a047; /* Darker green on hover */
+  }
+</style>
+<script>
+  function validateFormBeforeProceeding(event) {
+    const requiredFields = [
+      "firstName",
+      "lastName",
+      "phoneNumber",
+      "email",
+      "idNumber",
+      "residence",
+      "loanType"
+    ];
+
+    for (let field of requiredFields) {
+      const input = document.getElementById(field);
+      if (!input || input.value.trim() === "") {
+        alert("Please fill all required fields marked with *");
+        event.preventDefault(); // stop the link or button
+        return false;
+      }
+    }
+
+    // If all fields are filled, proceed
+    return true;
+  }
+</script>
